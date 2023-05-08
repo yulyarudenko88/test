@@ -1,29 +1,20 @@
-// import { Routes, Route } from 'react-router-dom';
-// import { lazy } from 'react';
-// import Layout from 'components/Layout/Layout';
+import { Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
+import Layout from 'components/Layout/Layout';
 
-import Tweets from "pages/Tweets/Tweets";
-
-// const Home = lazy(() => import('../../pages/Home/Home'));
-// const Movies = lazy(() => import('../../pages/Movies/Movies'));
-// const MovieDetails = lazy(() => import('../MovieDetails/MovieDetails'));
-// const MovieCast = lazy(() => import('../MovieCast/MovieCast'));
-// const MovieReviews = lazy(() => import('../MovieReviews/MovieReviews'));
+const Home = lazy(() => import('pages/Home/Home'));
+const Tweets = lazy(() => import('pages/Tweets/Tweets'));
 
 export const App = () => {
   return (
     <div>
-      <Tweets/>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="movies" element={<Movies />} />
-          <Route path="movies/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<MovieCast />} />
-            <Route path="reviews" element={<MovieReviews />} />
-          </Route>
+          <Route path="tweets" element={<Tweets />} />
+          <Route path="*" element={<Home />} />
         </Route>
-      </Routes> */}
+      </Routes>
     </div>
   );
 };
