@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { fetchTweets } from 'services/api';
 import { toast } from 'react-toastify';
 import { FiArrowLeft } from 'react-icons/fi';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 import CardsGallery from 'components/CardsGallery/CardsGallery';
 import Loader from 'components/Loader/Loader';
@@ -13,6 +15,7 @@ const Tweets = () => {
   const [tweets, setTweets] = useState([]);
   const [queryPage, setQueryPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+  const [filter, setFilter] = useState('all');
   const location = useLocation();
 
   useEffect(() => {
@@ -40,9 +43,15 @@ const Tweets = () => {
     setQueryPage(prevState => prevState + 1);
   };
 
+  const options = ['all', 'follow', 'followings'];
+
+  const handleFilterChange = option => {
+    setFilter(option.value);
+  };
+
   return (
     <>
-      <ButtonGoBack to={location.state?.from ?? "/"}>
+      <ButtonGoBack to={location.state?.from ?? '/'}>
         <FiArrowLeft
           style={{
             width: '20px',
@@ -51,7 +60,12 @@ const Tweets = () => {
         />
         Go back
       </ButtonGoBack>
-      <CardsGallery tweets={tweets} />
+      <Dropdown
+        options={options}
+        onChange={handleFilterChange}
+        value={filter}
+      />
+      <CardsGallery tweets={tweets} filter={filter} />
       {isLoading && <Loader />}
       {!isLoading && tweets.length > 0 && tweets.length !== 12 && (
         <BtnLoadMore onClick={handleLoadMore} />
