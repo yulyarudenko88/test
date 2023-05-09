@@ -7,7 +7,7 @@ const Home = () => {
       <Title>Tweets</Title>
       <Description>
         In our application, people share their news, thoughts and complaints!
-        And you Btncan follow them…
+        And you can follow them…
       </Description>
       <Description>
         Join our community faster!
