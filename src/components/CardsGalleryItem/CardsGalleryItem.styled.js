@@ -35,8 +35,6 @@ export const FollowersQuantity = styled.p`
 `;
 
 export const Btn = styled.button`
-  display: flex;
-  justify-content: center;
   width: 196px;
   margin-left: auto;
   margin-right: auto;
@@ -44,7 +42,4 @@ export const Btn = styled.button`
 
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.23);
   color: #373737;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
 `;
