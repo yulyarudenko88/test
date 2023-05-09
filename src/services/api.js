@@ -14,6 +14,5 @@ export async function fetchTweets(page) {
 
 export async function changeFollowers(id, newAmount) {
   const response = await axios.put(`/followers/${id}`, {followers:newAmount});
-  console.log(response)
   return await response;
 }
