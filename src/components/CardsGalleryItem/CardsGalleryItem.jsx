@@ -38,7 +38,7 @@ const CardsListItem = ({ id, avatar, alt, followers, tweets, filter }) => {
         (filter === 'followings' && isFollow)) && (
         <Card>
           <img src={LogoImg} alt="logo" />
-          <Avatar src={avatar} alt={alt} width={56} height={56} />
+          <Avatar src={avatar} alt={alt} width={62} height={62} />
           <TweetsQuantity>{tweets} tweets</TweetsQuantity>
           <FollowersQuantity>
             {followersQuantity.toLocaleString('en-US')} Followers
