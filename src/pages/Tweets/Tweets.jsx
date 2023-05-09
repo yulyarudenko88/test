@@ -68,7 +68,7 @@ const Tweets = () => {
       />
       <CardsGallery tweets={tweets} filter={filter} />
       {isLoading && <Loader />}
-      {!isLoading && tweets.length > 0 && tweets.length !== 12 && (
+      {!isLoading && tweets.length > 0 && queryPage < 4 && (
         <BtnLoadMore onClick={handleLoadMore} />
       )}
     </>

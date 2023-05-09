@@ -40,7 +40,7 @@ p {
 button {
   display: flex;
   justify-content: center;
-  padding: 10px 16px;
+  padding: 14px 16px;
   border-radius: 10px;
 
   font-family: inherit;
