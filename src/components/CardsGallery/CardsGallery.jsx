@@ -1,14 +1,12 @@
 import { CardsList } from './CardsGallery.styled';
 import CardsGalleryItem from 'components/CardsGalleryItem/CardsGalleryItem';
-import React from 'react';
+import PropTypes from 'prop-types';
 
-// import PropTypes from 'prop-types';
-
-const CardsGallery = ({ tweets }) => {
+const CardsGallery = ({ tweets, filter }) => {
   return (
     <CardsList>
       {tweets &&
-        tweets.map(({ id, avatar, followers, tweets,user }) => {
+        tweets.map(({ id, avatar, followers, tweets, user }) => {
           return (
             <CardsGalleryItem
               key={id}
@@ -17,6 +15,7 @@ const CardsGallery = ({ tweets }) => {
               alt={user}
               followers={followers}
               tweets={tweets}
+              filter={filter}
             />
           );
         })}
@@ -24,9 +23,9 @@ const CardsGallery = ({ tweets }) => {
   );
 };
 
-// MoviesGallery.propTypes = {
-//   movies: PropTypes.array,
-//   pathTo: PropTypes.string.isRequired,
-// };
+CardsGallery.propTypes = {
+  tweets: PropTypes.array.isRequired,
+  filter: PropTypes.string,
+};
 
 export default CardsGallery;
