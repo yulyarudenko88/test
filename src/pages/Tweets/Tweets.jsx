@@ -64,6 +64,7 @@ const Tweets = () => {
         options={options}
         onChange={handleFilterChange}
         value={filter}
+        className="dropdown"
       />
       <CardsGallery tweets={tweets} filter={filter} />
       {isLoading && <Loader />}
